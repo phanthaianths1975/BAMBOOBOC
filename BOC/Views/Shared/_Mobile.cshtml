@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0" />
+
+    <title>Mobile</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="icon" type="image/x-icon" href="~/images/favicon.ico">*@
+</head>
+<body >
+    <div style="width:100%;margin:auto;height:2000px;background-color:whitesmoke">
+    <div style="width:100%;background-color:green;box-sizing:border-box;margin-bottom:23px;display:flex">
+    <div style="width:40%;background-color:green;float:left"><img style="display:block;margin:auto;margin-top:17px;margin-bottom:15px" src="~/images/logo.png" height="45" width="145" /></div>
+    <div style="width:20%;background-color:green;float:left"><a href="/Home/Viewport1"><img style="display:block;margin:auto;margin-top:10px;margin-bottom:5px" src="~/images/home.png" height="27" width="27"/></a><p style="font-size:14px;color:white;text-align:center">Home</p></div>
+    <div style="width:20%;background-color:green;float:left"><img style="display:block;margin:auto;margin-top:10px;margin-bottom:5px" src="~/images/search.png" height="27" width="27"/><p style="font-size:14px;color:white;text-align:center">Search</p></div>
+   <div style="width:20%;background-color:green;float:left"><a href="/Home/Login"><img style="display:block;margin:auto;margin-top:10px;margin-bottom:5px" src="~/images/user.png" height="27" width="27"/></a><p style="font-size:14px;color:white;text-align:center">Login</p></div>
+     </div>
+     @RenderBody()
+    </div>
+    @*<footer>
+        <div class="container" style="position: relative; border-top: 2px solid #e2e1e1;">
+            <div class="row">
+                <div class="col-md-12 BottomFooter">
+                    <p>@Html.Raw("@ 2018 Bamboo Airways Copyright. All Rights Reserved.")</p>
+                </div>
+            </div>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

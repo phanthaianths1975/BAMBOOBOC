@@ -1,0 +1,101 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bamboo Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+  @*  <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">*@
+ <style>
+ body {
+  font-family: "Lato", sans-serif;margin:0px;padding:0px; 
+/*  background-image: linear-gradient(to bottom right, blue, white);
+
+*/
+  background-color:white;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#176B11;
+  overflow-x: hidden;
+  transition: 0.5s;  
+  box-shadow: 3px 0px gray;
+
+ /* padding-top: 60px;*/
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body >
+  <div id="mySidenav" class="sidenav">
+    <div style="background-color:blue;padding-top:10px;padding-bottom:10px">
+     <img src="~/images/logo.png" height="auto" width="80%" style="display:block;margin:auto" />
+   </div>
+  @*<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>*@
+ @* <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>*@
+  <div style="position:absolute;bottom:0px;left:0px;background-color:#092C95;width:100%;padding-top:10px;padding-bottom:10px">
+  <input type="text" class="form-control" placeholder="Search" name="search" style="margin-left:auto;margin-right:auto;width:90%;">
+  </div>
+</div>
+ 
+<div style="background-color:darkgreen;padding-top:3px;padding-bottom:3px;padding-left:30px;position:relative">
+  <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+  <a href="/MeetingRoom/Home/Signin" style="position:absolute;right:25px;top:10px;color:white;font-size:14px;text-decoration:none;font-size:20px"><span class="glyphicon glyphicon-user" style="margin-right:10px"></span>Thai An</a>
+</div>
+  
+ @RenderBody()
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+    
+    
+    
+      
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
